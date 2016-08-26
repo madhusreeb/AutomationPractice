@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0017D419-222A-427E-A247-809B360CD4CB}</ProjectGuid>
+    <ProjectGuid>{68207E05-E3E4-4CFB-8CE3-2BB6EF5A94B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AutomationPratice</RootNamespace>
-    <AssemblyName>AutomationPratice</AssemblyName>
+    <RootNamespace>TestAutomation</RootNamespace>
+    <AssemblyName>TestAutomation</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -16,7 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
-    <NuGetPackageImportStamp>685f5f53</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>05bf49bd</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,6 +42,10 @@
       <HintPath>..\packages\Selenium.WebDriver.2.53.1\lib\net40\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WebDriver.Support, Version=2.53.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.2.53.1\lib\net40\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -56,11 +60,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Common\Configuration.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Business\" />
+    <Folder Include="Database\" />
+    <Folder Include="TestMethods\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
